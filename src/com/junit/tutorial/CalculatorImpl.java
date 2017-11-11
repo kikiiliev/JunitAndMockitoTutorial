@@ -4,6 +4,7 @@ public class CalculatorImpl implements Calculator {
 
     /**
      * Sums two integers.
+     *
      * @param a
      * @param b
      * @return the sum of the arguments
@@ -15,6 +16,7 @@ public class CalculatorImpl implements Calculator {
 
     /**
      * Subtracts two integers.
+     *
      * @param a
      * @param b
      * @return the first argument subtracted with the second
@@ -26,6 +28,7 @@ public class CalculatorImpl implements Calculator {
 
     /**
      * Multiplies two integers.
+     *
      * @param a
      * @param b
      * @return the product of the arguments
@@ -37,13 +40,14 @@ public class CalculatorImpl implements Calculator {
 
     /**
      * Divides two integers
+     *
      * @param a
      * @param b
      * @return first argument divided by the second.
      */
     @Override
-    public int divide (int a, int b) {
-        if(b == 0) {
+    public int divide(int a, int b) {
+        if (b == 0) {
             throw new ArithmeticException("cannot divide by zero!");
         }
         return a / b;
@@ -51,15 +55,39 @@ public class CalculatorImpl implements Calculator {
 
     /**
      * Modulo operation.
+     *
      * @param a
      * @param b
      * @return first argument modulo second argument
      */
     @Override
     public int mod(int a, int b) {
-        if(b == 0) {
+        if (b == 0) {
             throw new ArithmeticException("cannot perform modulo by zero!");
         }
         return a % b;
+    }
+
+    @Override
+    public int operation(String operationName, int a, int b) {
+        int result = 0;
+        switch (operationName) {
+            case "sum":
+                result = sum(a, b);
+                break;
+            case "subtract":
+                result = subtract(a, b);
+                break;
+            case "multiply":
+                result = multiply(a, b);
+                break;
+            case "divide":
+                result = divide(a, b);
+                break;
+            case "mod":
+                result = mod(a, b);
+                break;
+        }
+        return result;
     }
 }

@@ -11,4 +11,6 @@ public interface Calculator {
     int divide (int a, int b) throws ArithmeticException;
 
     int mod(int a, int b);
+
+    int operation(String operationName, int a, int b);
 }
