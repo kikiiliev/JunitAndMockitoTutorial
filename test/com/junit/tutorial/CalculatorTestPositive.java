@@ -33,10 +33,7 @@ public class CalculatorTestPositive {
     @Test
     @Category(Positive.class)
     public void sum_correctValues_valid() {
-        for(int i  = 0; i < 1000_000_000; i++) {
-            result = calc.sum(1, 2);
-
-        }
+        result = calc.sum(1, 2);
         assertEquals("the sum should be equal to 3!", 3, result);
         assertThat("the sum should be equal to 3!", result, is(3));
         assertThat("the sum should be equal to 3!", result,
